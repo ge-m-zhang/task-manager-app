@@ -8,8 +8,8 @@ const PrioritySelect: React.FC<PrioritySelectProps> = ({ value, onChange }) => {
 
   return (
     <div className="form-field">
-      <label className="form-label">Priority</label>
-      <select value={value} onChange={handleChange} className="form-select">
+      <label className="form-label" htmlFor="task-priority">Priority</label>
+      <select id="task-priority" value={value} onChange={handleChange} className="form-select">
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
