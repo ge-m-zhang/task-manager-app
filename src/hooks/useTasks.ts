@@ -7,34 +7,26 @@ import {
 } from "../utils/taskUtils";
 
 /**
- * Custom hook for managing tasks with local storage persistence.
- *
- * This hook provides functionality to:
- * - Load tasks from localStorage when the component mounts
- * - Save tasks to localStorage whenever they change
- * - Add new tasks
- * - Toggle task completion status
- * - Delete tasks
- *
- * @returns {Object} An object containing:
- *   - tasks: Array of current Task objects
- *   - addTask: Function to add a new task
- *   - toggleTask: Function to toggle a task's completed status
- *   - deleteTask: Function to remove a task
+ * Custom hook to manage tasks.
+ * It handles loading, adding, toggling, and deleting tasks,
+ * while persisting them in localStorage.
  */
 export const useTasks = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   // Load tasks from localStorage on mount
   useEffect(() => {
     const savedTasks = loadTasksFromStorage();
     setTasks(savedTasks);
+    setIsInitialized(true); // Mark as initialized
   }, []);
 
-  // Save tasks to localStorage whenever tasks change
+  // Save tasks to localStorage whenever tasks change (but not on initial load)
   useEffect(() => {
+    if (!isInitialized) return; // Skip saving until loaded from storage
     saveTasksToStorage(tasks);
-  }, [tasks]);
+  }, [tasks, isInitialized]);
 
   const addTask = (taskData: TaskFormData) => {
     const newTask = createNewTask(taskData);
