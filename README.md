@@ -101,8 +101,6 @@ npm run test:coverage
 This is a demo project built for educational purposes and to demonstrate modern React/TypeScript development patterns. 
 While fully functional, it's designed as a learning tool and reference implementation rather than a production-ready application.
 
----
-Feel free to fork, modify, and use this project as a starting point for your own task manager or React/TypeScript learning!
 
 
 
