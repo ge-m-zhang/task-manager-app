@@ -3,6 +3,9 @@
 A simple, modern task manager built with React, TypeScript, and Vite. 
 This is a demo project designed to showcase modern React development practices and serve as a learning reference for TypeScript and component architecture.
 
+## Live Demo
+**[View Live Application](https://main.dvyj9633isign.amplifyapp.com/)**
+
 ## Features
 - **Add tasks** with a title, description, and priority (Low, Medium, High)
 - **View** the current list of tasks
@@ -98,10 +101,7 @@ npm run test:coverage
 
 ## Note
 
-This is a demo project built for educational purposes and to demonstrate modern React/TypeScript development patterns. 
-While fully functional, it's designed as a learning tool and reference implementation rather than a production-ready application.
-
-
-
+This demo showcases clean React/TypeScript architecture patterns within project scope, 
+demonstrating modern development practices for task management functionality.
 
 
